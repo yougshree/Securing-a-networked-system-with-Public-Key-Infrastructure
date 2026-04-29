@@ -12,7 +12,11 @@ PKI & TLS Security Implementation on Linux
 - Tools: Linux, Bash, OpenSSL, Apache, BIND9,
   UFW, Snort, VirtualBox
 
+
+  
+## [Useful Links]
  - VirtualBox 7.0.12 and installation pack link: https://www.virtualbox.org/wiki/Download_Old_Builds_7_0
  - Ubuntu 22.04.5 LTS link: https://releases.ubuntu.com/22.04/
+ - Installation Video link: https://youtu.be/jOImLHGc9dI?si=6y6KmvUpN5HZn-4u
   
   
