@@ -11,3 +11,8 @@ PKI & TLS Security Implementation on Linux
   SYN flood attack detection
 - Tools: Linux, Bash, OpenSSL, Apache, BIND9,
   UFW, Snort, VirtualBox
+
+ - VirtualBox 7.0.12 and installation pack link: https://www.virtualbox.org/wiki/Download_Old_Builds_7_0
+ - Ubuntu 22.04.5 LTS link: https://releases.ubuntu.com/22.04/
+  
+  
