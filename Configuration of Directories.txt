@@ -1,0 +1,27 @@
+1.mkdir AcmeCA 
+cd AcmeCA 
+mkdir -p ca/{root-ca,sub-ca,server}/{certs,crl,newcerts,private,csr} 
+
+2. tree ca
+
+3. chmod -v 700 ca/{root-ca,sub-ca,server}/private 
+
+4. touch ca/{root-ca,sub-ca,server}/index 
+
+5. 
+openssl rand -hex 16 > ca/root-ca/serial 
+openssl rand -hex 16 > ca/sub-ca/serial 
+tree ca 
+
+6. 
+cd ca 
+openssl genrsa -aes256 -out root-ca/private/ca.key 4096 
+#They will ask for a password. Give any password: 4321 (example)
+
+7. gedit root-ca/root-ca.conf 
+
+8. cd root-ca 
+tree  
+
+9. openssl req -config root-ca.conf -key private/ca.key -new -x509 -days 7305 -sha256 -extensions 
+v3_ca -out certs/ca.crt  
