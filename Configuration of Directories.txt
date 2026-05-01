@@ -1,6 +1,7 @@
 1. 
 mkdir AcmeCA 
-cd AcmeCA mkdir -p ca/{root-ca,sub-ca,server}/{certs,crl,newcerts,private,csr} 
+cd AcmeCA 
+mkdir -p ca/{root-ca,sub-ca,server}/{certs,crl,newcerts,private,csr} 
 2. tree ca
 
 3. chmod -v 700 ca/{root-ca,sub-ca,server}/private 
