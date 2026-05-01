@@ -29,11 +29,13 @@ openssl req -config root-ca.conf -key private/ca.key -new -x509 -days 7305 -sha2
 
 10. openssl x509 -noout -text -in certs/ca.crt 
 
-11.
-cd ../ 
-openssl genrsa -aes256 -out sub-ca/private/sub-ca.key 4096 
-
+11. cd ../ 
+12. openssl genrsa -aes256 -out sub-ca/private/sub-ca.key 4096 
 --give any password:  
+
+13.
+cd sub-ca 
+gedit sub-ca.conf 
 
 
 
