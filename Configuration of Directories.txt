@@ -46,6 +46,27 @@ cd ../
 cd root-ca 
 openssl ca -config root-ca.conf -extensions v3_intermediate_ca -days 3650 -notext in ../sub-ca/csr/sub-ca.csr -out ../sub-ca/certs/sub-ca.crt 
 
+16.
+tree 
+cat index 
+
+17. openssl x509 -noout -text -in ../sub-ca/certs/sub-ca.crt 
+
+18. 
+cd ../ 
+openssl genrsa -out server/private/server.key 2048 
+
+19.
+cd server 
+openssl req -key private/server.key -new -sha256 -out csr/server.csr 
+(remember the password and details) 
+
+20.
+cd ../sub-ca/ 
+openssl ca -config sub-ca.conf -extensions server_cert -days 365 -notext -in ../server/csr/server.csr -out ../server/certs/server.crt 
+
+21.openssl x509 -noout -text -in ../server/certs/server.crt 
+
 
 
 
