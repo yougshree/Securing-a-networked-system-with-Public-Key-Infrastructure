@@ -38,6 +38,14 @@ openssl req -config root-ca.conf -key private/ca.key -new -x509 -days 7305 -sha2
 cd sub-ca 
 gedit sub-ca.conf 
 
+14.
+openssl req -config sub-ca.conf -new -sha256 -key private/sub-ca.key -out csr/sub-ca.csr 
+
+15.
+cd ../ 
+cd root-ca 
+openssl ca -config root-ca.conf -extensions v3_intermediate_ca -days 3650 -notext in ../sub-ca/csr/sub-ca.csr -out ../sub-ca/certs/sub-ca.crt 
+
 
 
 
