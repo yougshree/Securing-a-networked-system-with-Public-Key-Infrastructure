@@ -1,0 +1,37 @@
+cd ../ 
+cat server/certs/server.crt sub-ca/certs/sub-ca.crt root-ca/certs/ca.crt > server/certs/ca-chained.crt 
+openssl pkcs12 -inkey server/private/server.key -in server/certs/server.crt -export -out server/certs/server.pfx 
+---------------------------------------------------------------------------------------------------------------
+mkdir generated 
+cp root-ca/certs/ca.crt generated 
+cp sub-ca/certs/sub-ca.crt generated 
+cp server/certs/server.crt generated 
+cp server/private/server.key generated 
+cp server/certs/server.pfx generated 
+cp server/certs/ca-chained.crt generated 
+---------------------------------------------------------------------------------------------------------------
+cd 
+sudo apt install apache2 
+sudo ufw app list 
+--------------------------------------------------------------------------------------------------------------
+sudo ufw app list
+---------------------------------------------------------------------------------------------------------------
+sudo ufw allow 'Apache Full'
+---------------------------------------------------------------------------------------------------------------
+sudo ufw status
+---------------------------------------------------------------------------------------------------------------
+sudo ufw enable
+---------------------------------------------------------------------------------------------------------------
+sudo ufw status
+---------------------------------------------------------------------------------------------------------------
+sudo systemctl status apache2 
+---------------------------------------------------------------------------------------------------------------
+Open new terminal:
+cd /
+cd /var/www/ 
+--------------------------------------------------------------------------------------------------------------
+sudo mkdir ewubdca.com 
+sudo chown -R yougshree:yougshree /var/www/ewubdca.com 
+sudo chmod -R 755 /var/www/ewubdca.com
+
+
