@@ -1,0 +1,25 @@
+ls -la /var/www/ewubdca.com/
+
+sudo rm -rf /var/www/ewubdca.com/
+
+[sudo] password for yougshree: 
+
+sudo systemctl stop apache2
+
+sudo rm -rf /var/www/ewubdca.com/
+
+sudo systemctl start apache2
+
+ls -la /var/www/ewubdca.com/
+
+ls /var/www/
+
+ls /etc/apache2/sites-available/
+
+ls /home/yougshree/Desktop/
+
+sudo rm -rf /var/www/ewubdca
+ls /var/www/
+
+
+
