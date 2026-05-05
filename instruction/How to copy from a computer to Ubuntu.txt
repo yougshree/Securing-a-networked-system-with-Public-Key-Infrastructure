@@ -12,3 +12,37 @@
 - sudo ./VBoxLinuxAdditions.run
 # Step 4: Reboot the VM
 - sudo reboot
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Again crash
+# Fix: VirtualBox Copy-Paste Not Working (Ubuntu)
+
+## Root Cause
+- Ubuntu crashed while using `nano`
+- Crash killed the VirtualBox clipboard service
+- Ubuntu auto-updated kernel (6.8.0-109 → 111) during/after crash
+- VirtualBox 7.0.14 couldn't build modules for kernel 6.8 due to `strlcpy` removal
+
+## Solution: Upgrade VirtualBox to 7.1.6
+
+### On Windows Host:
+1. Download VirtualBox 7.1.6:
+   `https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1.6-167084-Win.exe`
+2. Download Guest Additions 7.1.6:
+   `https://download.virtualbox.org/virtualbox/7.1.6/VBoxGuestAdditions_7.1.6.iso`
+3. Close VM and VirtualBox completely
+4. Install VirtualBox 7.1.6
+5. Restart Windows
+
+### In VirtualBox:
+6. Settings → Storage → attach `VBoxGuestAdditions_7.1.6.iso`
+
+### Inside Ubuntu VM:
+```bash
+sudo mount /dev/sr0 /mnt
+sudo /mnt/VBoxLinuxAdditions.run
+sudo reboot
+```
+
+### After reboot:
+- VirtualBox menu → **Devices → Shared Clipboard → Bidirectional**
+
